@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghalaya Police UB Group Paper-I</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#eef3ff}
+.header{background:#0a4da3;color:white;padding:16px;text-align:center;font-size:22px;font-weight:bold}
+.container{max-width:900px;margin:auto;padding:20px}
+.question{background:white;padding:15px;margin:12px 0;border-radius:10px;box-shadow:0 0 6px rgba(0,0,0,.1)}
+.option{display:block;margin:6px 0}
+.submitBtn{width:100%;padding:16px;font-size:18px;background:green;color:white;border:none;border-radius:10px;margin-top:20px;cursor:pointer}
+.result{background:white;padding:20px;margin-top:25px;border-radius:10px;text-align:center;font-size:20px}
+.wrongBox{background:#fff3f3;padding:15px;margin-top:15px;border-radius:10px}
+</style>
+</head>
+
+<body>
+
+<div class="header">👮 Meghalaya Police UB Group Paper-I Practice</div>
+
+<div class="container">
+<div id="examArea"></div>
+<button class="submitBtn" onclick="submitExam()">Submit Exam</button>
+<div id="result" class="result"></div>
+<div id="wrongArea"></div>
+</div>
+
+<script>
+
+const questions = [
+
+/* ===== ENGLISH ===== */
+
+{q:"Opposite of 'accuse':",o:["Blame","Explain","Excuse","Defend"],a:3},
+{q:"Opposite of 'urban':",o:["City","Village","Rural","Metro"],a:2},
+{q:"Synonym of 'yearly':",o:["Daily","Annual","Monthly","Weekly"],a:1},
+{q:"Plural of 'child':",o:["Childs","Children","Childes","Child"],a:1},
+{q:"Past tense of 'run':",o:["Run","Ran","Runned","Running"],a:1},
+{q:"Correct article: ____ honest man",o:["a","an","the","none"],a:1},
+{q:"Synonym of 'destroy':",o:["Build","Create","Damage","Improve"],a:2},
+{q:"Opposite of 'rare':",o:["Common","Unique","Strange","Odd"],a:0},
+{q:"One who walks on foot:",o:["Driver","Rider","Pedestrian","Runner"],a:2},
+{q:"Correct spelling:",o:["Recieve","Receive","Receve","Receeve"],a:1},
+
+/* ===== MATHEMATICS ===== */
+
+{q:"15 × 4 =",o:["50","55","60","65"],a:2},
+{q:"Square of 13:",o:["156","169","144","196"],a:1},
+{q:"200 ÷ 5 =",o:["20","30","40","50"],a:2},
+{q:"Half of 120:",o:["50","60","70","80"],a:1},
+{q:"LCM of 4 and 5:",o:["10","15","20","25"],a:2},
+{q:"20% of 300:",o:["40","50","60","70"],a:2},
+{q:"Next number: 3,6,9, ?",o:["10","11","12","15"],a:2},
+{q:"Area of square side 6:",o:["24","30","36","42"],a:2},
+{q:"100 − 45 =",o:["45","50","55","60"],a:2},
+{q:"12 × 8 =",o:["84","96","102","108"],a:1},
+
+/* ===== GK ===== */
+
+{q:"Capital of Meghalaya:",o:["Tura","Shillong","Jowai","Nongstoin"],a:1},
+{q:"India became independent in:",o:["1945","1947","1950","1942"],a:1},
+{q:"National bird of India:",o:["Peacock","Crow","Eagle","Swan"],a:0},
+{q:"Currency of India:",o:["Dollar","Rupee","Yen","Euro"],a:1},
+{q:"Largest ocean:",o:["Atlantic","Indian","Pacific","Arctic"],a:2},
+{q:"Mount Everest is in:",o:["India","Nepal","Bhutan","China"],a:1},
+{q:"Republic Day:",o:["15 Aug","26 Jan","2 Oct","14 Nov"],a:1},
+{q:"National animal:",o:["Lion","Tiger","Elephant","Leopard"],a:1},
+{q:"Smallest continent:",o:["Europe","Australia","Africa","Asia"],a:1},
+{q:"River Ganga flows into:",o:["Arabian Sea","Bay of Bengal","Indian Ocean","Pacific"],a:1},
+
+/* ===== SCIENCE ===== */
+
+{q:"Gas needed for breathing:",o:["Nitrogen","Oxygen","CO2","Helium"],a:1},
+{q:"Water boils at:",o:["90°C","95°C","100°C","105°C"],a:2},
+{q:"Earth revolves around:",o:["Moon","Sun","Mars","Venus"],a:1},
+{q:"Largest organ:",o:["Brain","Skin","Heart","Liver"],a:1},
+{q:"Liquid metal:",o:["Iron","Mercury","Gold","Copper"],a:1},
+{q:"Unit of force:",o:["Newton","Joule","Watt","Volt"],a:0},
+{q:"Vitamin from sunlight:",o:["A","B","C","D"],a:3},
+{q:"Sound travels fastest in:",o:["Air","Water","Solid","Vacuum"],a:2},
+{q:"Human heart pumps:",o:["Air","Blood","Water","Oxygen"],a:1},
+{q:"Plants make food by:",o:["Respiration","Photosynthesis","Digestion","Absorption"],a:1}
+
+];
+
+const area=document.getElementById("examArea");
+
+questions.forEach((q,i)=>{
+let html=`<div class="question"><b>${i+1}. ${q.q}</b>`;
+q.o.forEach((op,j)=>{
+html+=`<label class="option"><input type="radio" name="q${i}" value="${j}">${op}</label>`;
+});
+html+=`</div>`;
+area.innerHTML+=html;
+});
+
+function submitExam(){
+
+let correct=0;
+let wrongHTML="";
+let wrongCount=0;
+
+questions.forEach((q,i)=>{
+let sel=document.querySelector(`input[name="q${i}"]:checked`);
+
+if(sel && Number(sel.value)===q.a){
+correct++;
+}else{
+wrongCount++;
+let chosen=sel?q.o[Number(sel.value)]:"Not answered";
+
+wrongHTML+=`
+<div class="wrongBox">
+<b>Q${i+1}. ${q.q}</b><br>
+Your Answer: ❌ ${chosen}<br>
+Correct Answer: ✅ ${q.o[q.a]}
+</div>`;
+}
+});
+
+let marks=correct*2;
+let total=questions.length*2;
+let passMark=total*0.4;
+let result=marks>=passMark?"✅ PASS":"❌ FAIL";
+
+document.getElementById("result").innerHTML=`
+<h2>Correct: ${correct}/${questions.length}</h2>
+<h2>Marks: ${marks} / ${total}</h2>
+<h2>${result}</h2>
+<p>Pass Mark: ${passMark}</p>
+<p>Wrong Answers: ${wrongCount}</p>
+`;
+
+document.getElementById("wrongArea").innerHTML=wrongHTML;
+
+window.scrollTo(0,document.body.scrollHeight);
+
+}
+
+</script>
+
+</body>
+</html>
