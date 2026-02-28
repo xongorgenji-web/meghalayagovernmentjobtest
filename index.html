@@ -3,165 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meghalaya Exam Prep</title>
+<title>Meghalaya Government Job Test</title>
 
 <style>
-*{box-sizing:border-box;font-family:Arial;margin:0;padding:0}
-
-body{
-  background:linear-gradient(135deg,#0a4da3,#2c6cff);
-  color:#333;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  margin: 0;
+  color: white;
+  text-align: center;
 }
 
-/* ===== HEADER ===== */
-
-.header{
-  padding:20px;
-  text-align:center;
-  color:white;
-  font-size:22px;
-  font-weight:bold;
+.header {
+  padding: 30px;
+  background: rgba(0,0,0,0.4);
 }
 
-/* ===== MAIN CARD ===== */
-
-.container{
-  max-width:420px;
-  margin:auto;
-  background:white;
-  border-radius:25px 25px 0 0;
-  padding:20px;
-  min-height:100vh;
+h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
-/* ===== GREETING ===== */
-
-.title{
-  font-size:24px;
-  font-weight:bold;
-  margin-bottom:8px;
+.container {
+  padding: 40px 20px;
 }
 
-.subtitle{
-  color:#666;
-  margin-bottom:20px;
+.card {
+  background: rgba(255,255,255,0.1);
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  transition: 0.3s;
 }
 
-/* ===== FEATURE GRID ===== */
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
+.card:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.2);
 }
 
-.card{
-  background:#f4f7ff;
-  border-radius:18px;
-  padding:20px;
-  text-align:center;
-  font-weight:bold;
-  box-shadow:0 5px 12px rgba(0,0,0,0.1);
-  cursor:pointer;
-  transition:0.2s;
+button {
+  margin-top: 10px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  background:#e6edff;
+button:hover {
+  background: #00ffcc;
 }
-
-/* ===== FULL WIDTH BUTTON ===== */
-
-.bigBtn{
-  margin-top:20px;
-  padding:18px;
-  width:100%;
-  border:none;
-  border-radius:16px;
-  background:#0a4da3;
-  color:white;
-  font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
+.footer {
+  margin-top: 40px;
+  padding: 15px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.3);
 }
-
-/* ===== FOOTER NAV ===== */
-
-.nav{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  max-width:420px;
-  background:white;
-  display:flex;
-  justify-content:space-around;
-  padding:12px 0;
-  border-top:1px solid #ddd;
-}
-
-.nav div{
-  text-align:center;
-  font-size:12px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="header">
-🎯 Meghalaya Exam Prep
+  <h1>Meghalaya Government Job Test Portal</h1>
+  <p>Free Practice Tests for Competitive Exams</p>
 </div>
 
 <div class="container">
 
-<div class="title">Are you ready, Genji? 💪</div>
-<div class="subtitle">Prepare for LDA • Police • Govt Jobs</div>
+  <div class="card">
+    <h2>AB Police Test</h2>
+    <button onclick="location.href='abpolice1.html'">Start Test</button>
+  </div>
 
-<div class="grid">
+  <div class="card">
+    <h2>UB Police Test</h2>
+    <button onclick="location.href='ubpolice1.html'">Start Test</button>
+  </div>
 
-<div class="card" onclick="location.href='testmode.html'">
-📝 Practice Test
-</div>
+  <div class="card">
+    <h2>LDA 2024 Test</h2>
+    <button onclick="location.href='lda2024.html'">Start Test</button>
+  </div>
 
-<div class="card" onclick="location.href='course.html'">
-📚 Courses
-</div>
-
-<div class="card" onclick="location.href='lda2024.html'">
-📄 LDA 2024
-</div>
-
-<div class="card" onclick="location.href='ubgroup.html'">
-👮 Police UB
-</div>
-
-<div class="card" onclick="location.href='abgroup.html'">
-🚓 Police AB
-</div>
-
-<div class="card" onclick="location.href='results.html'">
-📊 My Results
-</div>
+  <div class="card">
+    <h2>LDA 2025 Test</h2>
+    <button onclick="location.href='lda2025.html'">Start Test</button>
+  </div>
 
 </div>
 
-<button class="bigBtn" onclick="location.href='lda2025.html'">
-🔥 Start Latest Exam (LDA 2025)
-</button>
-
-</div>
-
-<!-- Bottom Navigation -->
-
-<div class="nav">
-<div>🏠 Home</div>
-<div>📖 Study</div>
-<div>📝 Tests</div>
-<div>👤 Profile</div>
+<div class="footer">
+  © 2026 Meghalaya Job Test | Unofficial Practice Portal
 </div>
 
 </body>
